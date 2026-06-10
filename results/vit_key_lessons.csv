@@ -1,0 +1,5 @@
+lesson,interpretation
+patches as tokens,Images can be processed like sequences.
+scale matters,ViT becomes strong when trained on large datasets.
+less built-in locality,The model learns spatial relations instead of hard-coding them.
+transfer learning,Pretraining is important for practical performance.

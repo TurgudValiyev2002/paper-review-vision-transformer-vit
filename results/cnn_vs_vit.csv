@@ -1,0 +1,3 @@
+model_family,main_operation,inductive_bias,data_requirement
+CNN,local convolution,strong image prior,efficient on smaller data
+ViT,global self-attention over patches,weaker image prior,benefits strongly from large-scale pretraining
