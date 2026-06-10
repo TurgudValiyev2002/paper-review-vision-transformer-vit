@@ -3,6 +3,10 @@
 Paper: "Masked Autoencoders Are Scalable Vision Learners"  
 Link: https://arxiv.org/abs/2111.06377
 
+![Masked autoencoder diagram](../review_artifacts/mae_masked_autoencoder_diagram.png)
+
+The diagram shows the MAE pretraining task: many image patches are masked, visible patches go through the encoder, and a decoder reconstructs missing patches.
+
 Masked Autoencoders study self-supervised pretraining for vision transformers. The idea is to hide a large portion of image patches and train the model to reconstruct the missing content. This creates a learning signal without requiring class labels.
 
 The paper uses an asymmetric encoder-decoder design. The encoder processes only visible patches, which saves computation. A lightweight decoder reconstructs the full image using encoded visible patches and mask tokens.

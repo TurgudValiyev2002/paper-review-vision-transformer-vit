@@ -3,6 +3,10 @@
 Paper: "Training Data-Efficient Image Transformers & Distillation through Attention"  
 Link: https://arxiv.org/abs/2012.12877
 
+![DeiT distillation diagram](../review_artifacts/deit_distillation_diagram.png)
+
+The diagram shows the DeiT idea: a teacher model guides the transformer student through distillation, improving training efficiency.
+
 DeiT addresses a practical problem in the original ViT paper: ViTs can need very large pretraining datasets. The authors asked whether a vision transformer can be trained effectively on ImageNet without massive private datasets.
 
 The paper introduced a stronger training recipe and a distillation strategy. A teacher model helps the transformer student learn. The distillation token is an important design detail because it gives the model a dedicated path for learning from the teacher.

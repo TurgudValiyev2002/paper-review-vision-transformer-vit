@@ -3,6 +3,10 @@
 Paper: "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"  
 Link: https://arxiv.org/abs/2010.11929
 
+![Vision Transformer architecture flow](../review_artifacts/vit_architecture_flow.png)
+
+The diagram shows the ViT pipeline: image patches become tokens, position information is added, and a Transformer encoder produces an image-level class representation.
+
 This paper introduced the Vision Transformer approach for image classification. The central idea is simple and powerful: split an image into fixed-size patches, turn each patch into a token, add position embeddings, and process the token sequence with a standard Transformer encoder.
 
 The paper challenged the assumption that convolution is necessary for high-performing image recognition. Instead of building locality directly into the architecture, ViT lets self-attention learn relationships between patch tokens.

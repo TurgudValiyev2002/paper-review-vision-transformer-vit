@@ -3,6 +3,10 @@
 Paper: "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows"  
 Link: https://arxiv.org/abs/2103.14030
 
+![Swin shifted windows diagram](../review_artifacts/swin_shifted_windows_diagram.png)
+
+The diagram shows shifted windows: attention is local, but window shifts allow information to move across neighboring regions.
+
 Swin Transformer improves the practical architecture of vision transformers. The original ViT uses global attention over patch tokens, which can be expensive and less natural for dense vision tasks. Swin introduces local window attention and shifted windows.
 
 The model also builds a hierarchy. As the network goes deeper, patch representations are merged, producing multi-scale features. This makes Swin more similar to CNN backbones in how it handles resolution and scale.

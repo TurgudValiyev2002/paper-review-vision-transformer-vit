@@ -42,17 +42,22 @@ A basic ViT pipeline is:
 
 Image -> patchify -> linear patch embedding -> position embedding -> Transformer encoder -> class token -> classifier.
 
+![Vision Transformer architecture flow](review_artifacts/vit_architecture_flow.png)
+
 The architecture is shown as a flow diagram because each stage transforms the representation.
 
 ## Review Artifacts
 
 The repository includes:
 
-- `results/reviewed_papers.csv`
-- `results/paper_comparison.csv`
-- `results/vit_architecture_table.csv`
-- `results/vit_architecture_flow.png`
-- `results/patch_attention_sketch.png`
+- `review_artifacts/reviewed_papers.csv`
+- `review_artifacts/paper_comparison.csv`
+- `review_artifacts/vit_architecture_table.csv`
+- `review_artifacts/vit_architecture_flow.png`
+- `review_artifacts/patch_attention_sketch.png`
+- `review_artifacts/deit_distillation_diagram.png`
+- `review_artifacts/swin_shifted_windows_diagram.png`
+- `review_artifacts/mae_masked_autoencoder_diagram.png`
 - `paper_notes/01_vit.md`
 - `paper_notes/02_deit.md`
 - `paper_notes/03_swin_transformer.md`

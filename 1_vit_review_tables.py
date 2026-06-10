@@ -8,7 +8,7 @@ import pandas as pd
 from matplotlib.patches import FancyArrowPatch, Rectangle
 
 
-RESULTS = Path("results")
+RESULTS = Path("review_artifacts")
 
 
 def save_vit_architecture() -> None:
@@ -23,16 +23,16 @@ def save_vit_architecture() -> None:
     ]
     fig, ax = plt.subplots(figsize=(12, 3.8))
     ax.axis("off")
-    x = 0.03
+    x = 0.035
     for i, (title, detail) in enumerate(blocks):
-        width = 0.12
+        width = 0.11
         rect = Rectangle((x, 0.38), width, 0.28, facecolor="#efe6f7", edgecolor="#674b8f", linewidth=1.5)
         ax.add_patch(rect)
         ax.text(x + width / 2, 0.55, title, ha="center", va="center", fontsize=10, weight="bold")
         ax.text(x + width / 2, 0.44, detail, ha="center", va="center", fontsize=8)
         if i < len(blocks) - 1:
-            ax.add_patch(FancyArrowPatch((x + width, 0.52), (x + width + 0.035, 0.52), arrowstyle="->", mutation_scale=15, linewidth=1.3))
-        x += width + 0.045
+            ax.add_patch(FancyArrowPatch((x + width, 0.52), (x + width + 0.023, 0.52), arrowstyle="->", mutation_scale=15, linewidth=1.3))
+        x += width + 0.03
     ax.set_title("Vision Transformer Architecture Flow", fontsize=15, weight="bold")
     plt.tight_layout()
     plt.savefig(RESULTS / "vit_architecture_flow.png", dpi=180)
