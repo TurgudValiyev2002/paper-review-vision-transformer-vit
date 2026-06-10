@@ -24,6 +24,8 @@ The aim is to understand what ViT introduced, what problem it created, and how l
 | [Swin Transformer](https://arxiv.org/abs/2103.14030) | 2021 | Added hierarchy and shifted local windows for efficient vision backbones. |
 | [Masked Autoencoders Are Scalable Vision Learners](https://arxiv.org/abs/2111.06377) | 2021 | Used masked patch reconstruction for scalable self-supervised ViT pretraining. |
 
+Short one-page notes for each paper are available in `paper_notes/`.
+
 ## What The Papers Did
 
 The ViT paper treated an image as a sequence of fixed-size patch tokens. This made it possible to use the standard Transformer encoder for image classification. The main limitation was data scale: ViT worked best when pretrained on very large datasets.
@@ -42,15 +44,19 @@ Image -> patchify -> linear patch embedding -> position embedding -> Transformer
 
 The architecture is shown as a flow diagram because each stage transforms the representation.
 
-## Results Produced In This Repository
+## Review Artifacts
 
-The repository creates:
+The repository includes:
 
 - `results/reviewed_papers.csv`
 - `results/paper_comparison.csv`
 - `results/vit_architecture_table.csv`
 - `results/vit_architecture_flow.png`
 - `results/patch_attention_sketch.png`
+- `paper_notes/01_vit.md`
+- `paper_notes/02_deit.md`
+- `paper_notes/03_swin_transformer.md`
+- `paper_notes/04_masked_autoencoders.md`
 
 ## Interpretation
 

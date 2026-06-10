@@ -16,9 +16,9 @@ ViT showed that images can be split into patches and processed as token sequence
 
 We extracted each paper's contribution, limitation, and lesson. We also built a ViT architecture flow diagram and a patch-attention sketch.
 
-## Results
+## Review Artifacts
 
-The repository contains reviewed-paper tables, a comparison table, a ViT architecture table, a flow diagram, and a patch self-attention sketch.
+The repository contains reviewed-paper tables, a comparison table, a ViT architecture table, a flow diagram, a patch self-attention sketch, and one short note for each reviewed paper in `paper_notes/`.
 
 ## Interpretation
 
