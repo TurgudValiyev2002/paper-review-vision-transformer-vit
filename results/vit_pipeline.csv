@@ -1,7 +1,0 @@
-stage,explanation
-Image,Input image is divided into fixed-size patches.
-Patch embedding,Each patch is flattened and projected into a vector.
-Position embedding,Position information is added because attention has no natural order.
-Transformer encoder,Self-attention mixes information across patches.
-Class token,A special token summarizes the image for classification.
-MLP head,The final representation is mapped to class scores.

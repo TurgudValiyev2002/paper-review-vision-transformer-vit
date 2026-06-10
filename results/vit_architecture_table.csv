@@ -1,0 +1,7 @@
+stage,purpose
+Image,Input image is split into patches.
+Patch embedding,Each patch becomes a token vector.
+Position embedding,Location information is added to token vectors.
+Transformer encoder,Self-attention and MLP blocks mix patch information.
+Class token,A learned token summarizes image-level information.
+Classifier,The final representation is mapped to class scores.

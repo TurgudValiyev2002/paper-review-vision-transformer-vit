@@ -2,44 +2,63 @@
 
 ## Motivation
 
-Vision Transformer changed computer vision by showing that a pure transformer architecture can work well for image classification when trained at sufficient scale. Understanding ViT is important because many modern vision-language and multimodal models build on this idea.
+Vision Transformer is important because it changed the assumption that image recognition must be built mainly around convolution. But the original ViT paper is only the starting point. To understand the topic properly, we also need to study data-efficient training, hierarchical attention, and self-supervised pretraining.
 
 ## Project Goal
 
-We reviewed the main ViT idea: split an image into patches, treat patches like tokens, and process them with a transformer encoder.
+We reviewed four papers:
 
-## Paper / Problem
+1. ViT: images as patch tokens.
+2. DeiT: data-efficient ViT training with distillation.
+3. Swin Transformer: hierarchical shifted-window attention.
+4. MAE: masked autoencoder pretraining for scalable vision learners.
 
-The reviewed work is the Vision Transformer approach for image recognition. The central problem is whether self-attention can replace convolution as the main operation for visual classification.
+The aim is to understand what ViT introduced, what problem it created, and how later papers improved it.
 
-## Tools
+## Reviewed Papers
 
-Python, pandas, and matplotlib.
+| Paper | Year | Main contribution |
+|---|---:|---|
+| [An Image is Worth 16x16 Words](https://arxiv.org/abs/2010.11929) | 2020 | Introduced ViT: split images into patches and process them with a Transformer encoder. |
+| [Training Data-Efficient Image Transformers & Distillation through Attention](https://arxiv.org/abs/2012.12877) | 2020 | Showed that ViTs can be trained more effectively on ImageNet using distillation and a strong recipe. |
+| [Swin Transformer](https://arxiv.org/abs/2103.14030) | 2021 | Added hierarchy and shifted local windows for efficient vision backbones. |
+| [Masked Autoencoders Are Scalable Vision Learners](https://arxiv.org/abs/2111.06377) | 2021 | Used masked patch reconstruction for scalable self-supervised ViT pretraining. |
 
-## Method
+## What The Papers Did
 
-We summarized the ViT pipeline, compared CNNs and ViTs, and extracted key lessons into structured result tables.
+The ViT paper treated an image as a sequence of fixed-size patch tokens. This made it possible to use the standard Transformer encoder for image classification. The main limitation was data scale: ViT worked best when pretrained on very large datasets.
 
-## Hyperparameters
+DeiT addressed this data problem. It showed that better training recipes and distillation can make ViT-style models competitive without requiring enormous private pretraining datasets.
 
-No model was trained in this review. Important ViT design settings include patch size, embedding dimension, number of transformer layers, number of attention heads, MLP size, and pretraining dataset size.
+Swin Transformer changed the architecture. Instead of global attention everywhere, it used shifted local windows and a hierarchy. This made the transformer more efficient and more useful for dense prediction tasks such as object detection and segmentation.
 
-## Results
+MAE changed the training objective. It used masked patch reconstruction, showing that self-supervised pretraining can make large ViT models learn strong visual representations.
 
-The result files are:
+## Architecture Discussion
 
-- `results/vit_pipeline.csv`
-- `results/cnn_vs_vit.csv`
-- `results/vit_key_lessons.csv`
-- `results/vit_pipeline.png`
+A basic ViT pipeline is:
+
+Image -> patchify -> linear patch embedding -> position embedding -> Transformer encoder -> class token -> classifier.
+
+The architecture is shown as a flow diagram because each stage transforms the representation.
+
+## Results Produced In This Repository
+
+The repository creates:
+
+- `results/reviewed_papers.csv`
+- `results/paper_comparison.csv`
+- `results/vit_architecture_table.csv`
+- `results/vit_architecture_flow.png`
+- `results/patch_attention_sketch.png`
 
 ## Interpretation
 
-ViT reduces image modeling to sequence modeling. This is powerful, but it also means the model has less built-in image structure than a CNN. Large-scale pretraining becomes very important.
+The main lesson is that ViT opened the door, but later papers made the idea more practical. DeiT improved data efficiency, Swin improved architectural efficiency and dense-task usability, and MAE improved pretraining.
 
 ## Conclusion
 
-ViT is a foundation for modern vision models. Its key lesson is that attention can model images effectively, but data scale and pretraining are critical.
+Vision Transformer should be studied as a research line, not as one isolated paper. The core idea is patch tokens plus self-attention, but practical success depends on training recipe, hierarchy, and pretraining strategy.
 
 ## How To Run
 

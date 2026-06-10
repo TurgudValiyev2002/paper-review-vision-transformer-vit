@@ -2,28 +2,28 @@
 
 ## Motivation
 
-We reviewed ViT because transformer-based vision models are now central in computer vision and multimodal AI.
+We reviewed Vision Transformer as a research line because the original ViT paper does not fully explain how vision transformers became practical. Later work improved data efficiency, architecture, and pretraining.
 
-## Paper / Problem
+## Papers Reviewed
 
-The reviewed idea is image classification with a pure transformer architecture using image patches as tokens.
+We reviewed Dosovitskiy et al. 2020 on ViT, Touvron et al. 2020 on DeiT, Liu et al. 2021 on Swin Transformer, and He et al. 2021 on Masked Autoencoders.
+
+## What The Papers Did
+
+ViT showed that images can be split into patches and processed as token sequences by a Transformer. DeiT showed that careful training and distillation can reduce ViT's need for huge datasets. Swin Transformer added shifted local windows and hierarchy, making transformers better vision backbones. MAE used masked patch reconstruction for self-supervised pretraining.
 
 ## Method
 
-We summarized the ViT pipeline, compared CNN and ViT assumptions, and listed the main lessons.
-
-## Hyperparameters
-
-No training was done. Important ViT settings include patch size, embedding dimension, depth, number of heads, MLP dimension, and pretraining scale.
+We extracted each paper's contribution, limitation, and lesson. We also built a ViT architecture flow diagram and a patch-attention sketch.
 
 ## Results
 
-The repository contains a ViT pipeline table, CNN-vs-ViT comparison table, key lessons table, and pipeline figure.
+The repository contains reviewed-paper tables, a comparison table, a ViT architecture table, a flow diagram, and a patch self-attention sketch.
 
 ## Interpretation
 
-ViT is powerful because self-attention can connect all patches globally. Its weakness is that it has weaker built-in image priors than CNNs, so it usually needs large-scale pretraining.
+The main idea of ViT is simple: patches become tokens. The hard part is making this work efficiently and with enough data. DeiT, Swin, and MAE each solve a different weakness of the original ViT.
 
 ## Conclusion
 
-ViT is a major foundation for modern vision AI. The most important idea is treating image patches as tokens for transformer processing.
+ViT is best understood as the start of a family of models. Modern vision transformers combine patch tokenization, attention, better training recipes, hierarchy, and self-supervised pretraining.

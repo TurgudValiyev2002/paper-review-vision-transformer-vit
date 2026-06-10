@@ -1,0 +1,5 @@
+method,core_idea,limitation,why_it_matters
+ViT,global attention over fixed image patches,needs large-scale pretraining,simple architecture
+DeiT,ViT plus data-efficient training and distillation,depends on teacher/training recipe,ImageNet-only training becomes stronger
+Swin,shifted local-window attention with hierarchy,more complex architecture,better fit for dense vision tasks
+MAE,masked patch reconstruction pretraining,"pretraining objective, not classifier alone",scalable self-supervised learning
