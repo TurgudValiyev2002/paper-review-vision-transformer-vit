@@ -46,6 +46,19 @@ Image -> patchify -> linear patch embedding -> position embedding -> Transformer
 
 The architecture is shown as a flow diagram because each stage transforms the representation.
 
+## Critical Limitations
+
+ViT changed vision research, but the original idea has important weaknesses.
+
+- Vanilla ViT has weak image-specific inductive bias compared with CNNs. It does not naturally encode locality or translation structure.
+- The original ViT result depended heavily on large-scale pretraining. Without enough data, ViT can underperform strong CNN baselines.
+- Global attention is expensive as image resolution grows, which makes dense prediction harder without architectural changes.
+- DeiT improves data efficiency, but the training recipe and distillation setup matter a lot; the architecture alone is not the whole answer.
+- Swin improves efficiency with windows, but it also moves away from pure global attention and adds architecture complexity.
+- MAE shows strong self-supervised pretraining, but reconstruction pretraining does not remove the need for careful downstream fine-tuning.
+
+The main failure mode is treating "Transformer for vision" as automatically better. The papers show that success depends on data scale, training recipe, architecture, and pretraining objective.
+
 ## Review Artifacts
 
 The repository includes:

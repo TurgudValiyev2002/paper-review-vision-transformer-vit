@@ -22,6 +22,10 @@ We extracted each paper's contribution, limitation, and lesson. We also built a 
 
 The repository contains reviewed-paper tables, a comparison table, ViT architecture/design diagrams in `review_artifacts/`, and one short note for each reviewed paper in `paper_notes/`.
 
+## Critical Limitations
+
+Vanilla ViT has weaker locality bias than CNNs and depends heavily on large-scale pretraining. Global attention is expensive at high resolution. Later papers improve these issues, but they add training complexity, architectural changes, or self-supervised pretraining requirements.
+
 ## Interpretation
 
 The main idea of ViT is simple: patches become tokens. The hard part is making this work efficiently and with enough data. DeiT, Swin, and MAE each solve a different weakness of the original ViT.
